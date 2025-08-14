@@ -1,0 +1,307 @@
+@use "./../../../assets/scss/mixin.scss" as *;
+
+// --- Existing styles for .location-modal ---
+
+.location-modal {
+    .ant-modal-content {
+        border-radius: 20px;
+        padding: 0px;
+        padding-bottom: 1rem;
+
+        .ant-modal-close {
+            background-color: transparent;
+
+            .ant-modal-close-x {
+                box-shadow: 0px 0px 4px 3px #00000012;
+                background: #fff;
+                color: #000;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+            }
+        }
+
+        .model-content {
+            .top-title {
+                padding: 20px 25px;
+                background-color: #E8214C;
+                margin-bottom: 0rem;
+                border-radius: 18px 18px 0px 0px;
+            }
+
+            h2 {
+                font-family: 'poppins', sans-serif !important;
+                font-weight: 500;
+                font-size: 26px;
+                line-height: 100%;
+                text-transform: capitalize;
+                color: #fff;
+                text-align: left;
+                margin-bottom: 6px;
+
+                @include responsive(sm) {
+                    font-size: 22px;
+                }
+            }
+
+            h3 {
+                font-weight: 400;
+                font-size: 16px;
+                text-align: left;
+                text-transform: capitalize;
+                color: #fff;
+
+                @include responsive(sm) {
+                    font-size: 14px;
+                }
+            }
+
+            .popular-city {
+                padding: 20px;
+                border-bottom: 1px solid #eaeaea;
+
+                p {
+                    font-family: 'poppins', sans-serif !important;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 100%;
+                    letter-spacing: 0px;
+                    text-transform: capitalize;
+                    color: var(--primary);
+                    text-align: center;
+
+                    @include responsive(sm) {
+                        font-size: 16px;
+                    }
+                }
+
+                ul {
+                    padding: 0px;
+                    margin: 0px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    margin-top: 20px;
+                    margin-bottom: 0rem;
+                    flex-wrap: wrap;
+
+                    @include responsive(sm) {
+                        gap: 20px;
+                    }
+
+                    li {
+                        font-family: 'poppins', sans-serif !important;
+                        font-weight: 500;
+                        font-size: 22px;
+                        line-height: 100%;
+                        text-transform: capitalize;
+                        color: var(--text);
+                        list-style: none;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 10px;
+                        cursor: pointer;
+                        padding: 24px 24px;
+                        border-radius: 10px;
+                        transition: all 0.3s ease;
+
+                        &:hover {
+                            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                        }
+
+                         &.selected {
+                            border: 2px solid var(--primary);
+                            background-color: #fff5f7; 
+                            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                        }
+
+                        @include responsive(sm) {
+                            font-size: 14px;
+                        }
+
+                        img {
+                            width: 66px;
+                            height: auto;
+
+                            @include responsive(sm) {
+                                width: 40px;
+                            }
+                        }
+
+                        span {
+                            font-family: "poppins", sans-serif !important;
+                            font-size: 18px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            .other-city {
+                padding: 20px;
+
+                p {
+                    font-family: 'poppins', sans-serif !important;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 100%;
+                    text-transform: capitalize;
+                    color: #656565;
+                    text-align: center;
+
+                    @include responsive(sm) {
+                        font-size: 14px;
+                    }
+                }
+
+                ul {
+                    padding: 0px;
+                    margin: 0px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    margin-top: 20px;
+                    flex-wrap: wrap;
+
+                    li {
+                        list-style-type: none;
+                        font-family: 'poppins', sans-serif !important;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 100%;
+                        text-transform: capitalize;
+                        color: #000;
+                        width: 15%;
+                        text-align: center;
+                        background-color: #fbfbfb;
+                        padding: 12px;
+                        border-radius: 7px;
+                        border: 1px solid #eaeaea;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        
+                        &.selected, &:hover {
+                            border-color: var(--primary);
+                            color: var(--primary);
+                            background-color: #fff5f7;
+                        }
+
+                        span {
+                            cursor: pointer;
+                        }
+
+                        @include responsive(sm) {
+                            font-size: 14px;
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+
+            .view-all-btn {
+                font-family: 'poppins', sans-serif !important;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 100%;
+                text-transform: capitalize;
+                color: var(--primary);
+                text-align: center;
+                width: 100%;
+                display: block;
+                padding: 10px 20px;
+                cursor: pointer;
+
+                @include responsive(sm) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+// --- NEW STYLES FOR PINCODE MODAL ---
+
+.pincode-modal {
+    .ant-modal-content {
+        border-radius: 20px;
+        padding: 0px; // Remove default padding to use our own
+    }
+    
+    // Using the same .model-content class for consistency
+    .model-content {
+        
+        // Inherit the top-title style from the location modal
+        .top-title {
+            padding: 20px 25px;
+            background-color: #E8214C;
+            border-radius: 18px 18px 0px 0px;
+            
+            h2, h3 {
+                font-family: 'poppins', sans-serif !important;
+                color: #fff;
+                text-align: left;
+            }
+            h2 {
+                font-weight: 500;
+                font-size: 24px;
+                margin-bottom: 0px;
+                line-height: 26px;
+                @include responsive(sm) {
+                   font-size: 20px;
+                }
+            }
+            h3 {
+                font-weight: 400;
+                font-size: 14px;
+                @include responsive(sm) {
+                   font-size: 13px;
+                }
+            }
+        }
+
+        .pincode-selection-area {
+            padding: 25px;
+
+            .ant-breadcrumb {
+                margin-bottom: 10px;
+                font-family: 'poppins', sans-serif !important;
+                font-size: 14px;
+
+                .ant-breadcrumb-link {
+                    cursor: pointer;
+                    color: var(--primary)!important;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                .selected_city_breadcrumb{
+                    cursor: unset !important;
+                    text-decoration: none !important;
+                    color: #000!important;
+                }
+                 .ant-breadcrumb-separator, .ant-breadcrumb-link {
+                     color: #656565;
+                 }
+            }
+
+            .ant-select {
+                width: 100%;
+                height: auto;
+                .ant-select-selector {
+                    padding: 6px 10px !important;
+                    border-radius: 8px !important;
+                    border-color: #d9d9d9 !important;
+                }
+                .ant-select-selection-placeholder, .ant-select-selection-item {
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

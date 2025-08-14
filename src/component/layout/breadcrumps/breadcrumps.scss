@@ -1,0 +1,38 @@
+.breadcrumps-wrap{
+    padding: 8px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    .breadcrumb{
+        margin-bottom: 0px;
+        .breadcrumb-item{
+            a{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 30px;
+                color: #5D6063;
+                text-decoration: none;
+            }
+            &:first-child{
+                &::before{
+                    display: none;
+                }
+            }
+            &::before{
+                content: ">";
+                color: #5D6063;
+                line-height: 29px;
+            }
+            &.active{
+                color: var(--secondary);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 30px;
+                text-decoration: none;
+                &::before{
+                    content: ">";
+                    color: var(--secondary);
+                }
+            }
+        }
+    }
+}

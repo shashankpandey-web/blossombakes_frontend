@@ -1,0 +1,373 @@
+@use "./../../../assets/scss/mixin.scss" as *;
+
+.cart-wrapper {
+  .product-listing {
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    margin-bottom: 40px;
+
+    // --- GENERAL UTILITY FOR PRICE DISPLAY ---
+    .price-display {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-top: 4px;
+        margin-bottom: 14px; // Replaces margin on h4
+        
+        .discount-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .regular-price-struck {
+            font-size: 14px;
+            color: #6c757d;
+            text-decoration: line-through;
+        }
+        
+        .regular-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .discount-badge {
+            color: #28a745;
+            font-size: 13px;
+            font-weight: 600;
+        }
+    }
+
+    ul {
+      padding: 0px;
+      margin: 0px;
+
+      // --- MAIN LIST ITEM ---
+      > li {
+        list-style: none;
+        display: block; // Changed to block to allow vertical stacking
+        padding: 15px;
+        border-bottom: 1px solid #E6E6E6;
+
+        &:last-child {
+          border: 0px;
+        }
+        
+        // --- WRAPPER FOR MAIN PRODUCT INFO ---
+        .main-product-display {
+            display: flex;
+            gap: 22px;
+            @include responsive(md) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        .product-image {
+          @include responsive(md){
+            height: 290px;
+            width: 100%;
+            object-fit: cover;
+          }
+
+          .ant-skeleton{
+
+             @include responsive(sm){
+           
+                height: 100%;
+                
+              }
+               @include responsive(md){
+                height: 100%;
+              }
+
+            .ant-skeleton-image{
+              @include responsive(sm){
+                width: 100%;
+                height: 100%;
+              }
+
+               @include responsive(md){
+                width: 100%;
+                height: 100%;
+              }
+  
+            }
+          }
+          img {
+            width: 120px;
+            height: 155px;
+            border-radius: 5px;
+            @include responsive(md){
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .product-details {
+          position: relative;
+          width: 100%;
+
+          .cross-btn {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+          }
+
+          h3 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 100%;
+            color: var(--text);
+            margin-bottom: 8px;
+          }
+
+          h4 { 
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 100%;
+            color: #000000;
+            margin-bottom: 14px;
+          }
+
+          .weight-time {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            @include responsive(md) {
+              flex-wrap: wrap;
+              gap: 10px;
+              justify-content: space-between;
+            }
+            p {
+              font-family: 'poppins', sans-serif !important;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 150%;
+              color: #656565;
+              span { color: var(--text); }
+              svg { width: 15px; height: 15px; margin-right: 5px; }
+            }
+          }
+
+          .quantity-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            .quantity_section {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+            
+            h3 {
+              font-family: 'poppins', sans-serif !important;
+              font-weight: 400;
+              font-size: 15px;
+              color: #0C0C0C;
+              margin-bottom: 0px;
+            }
+            .quantity-controls {
+              border: 1px solid #E6E6E6;
+              border-radius: 50px;
+              padding: 4px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              width: 130px;
+              justify-content: space-around;
+              .quantity-number {
+                font-family: 'poppins', sans-serif !important;
+                font-weight: 400;
+                font-size: 16px;
+                width: 50px;
+                text-align: center;
+                color: #1A1A1A;
+              }
+              button {
+                background-color: #F2F2F2;
+                border-radius: 50%;
+                width: 34px;
+                height: 34px;
+                border: 0px;
+                &:hover { color: var(--primary); }
+                span { font-size: 18px; }
+              }
+            }
+          }
+
+          .cake-message {
+            // margin-bottom: 10px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            .add_message_btn {
+              color: white;
+              background-color: #E8214C;
+              height: auto;
+            }
+            h3 { font-size: 14px; }
+            .message-edit {
+              display: flex;
+              gap: 8px;
+              .ant-input { flex: 1; }
+            }
+            .message-display {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              span {
+                color: #E8214C;
+                font-size: 14px;
+                font-style: italic;
+              }
+              .ant-btn { padding: 0; }
+            }
+          }
+        }
+
+        // --- ADDON SECTION STYLING ---
+        .addon-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #e0e0e0;
+            padding-left: 24px;
+            @include responsive(md) {
+                padding-left: 0;
+            }
+
+            .addon-section-title {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                color: #495057;
+            }
+        }
+        
+        .addon-product-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        // --- INDIVIDUAL ADDON ITEM ---
+        .addon-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+             flex-wrap: wrap; 
+            position: relative; // Needed for positioning the remove button on mobile
+
+            .addon-item-image {
+                width: 50px;
+                height: 50px;
+                border-radius: 6px;
+                overflow: hidden;
+                flex-shrink: 0;
+                img { width: 100%; height: 100%; object-fit: cover; }
+            }
+
+            .addon-item-details {
+                flex-grow: 1;
+                h5 { font-size: 14px; font-weight: 500; margin: 0; }
+                .price-display {
+                    margin: 2px 0 0 0;
+                    .regular-price, .discount-price { font-size: 14px; font-weight: 500; }
+                    .regular-price-struck { font-size: 12px; }
+                    .discount-badge { font-size: 12px; }
+                }
+            }
+
+              .addon-item-quantity {
+                min-width: 100px; 
+                display: flex;
+                justify-content: center;
+
+                .addon-quantity-controls {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 20px;
+                    padding: 2px;
+                    
+                    .quantity-number {
+                        font-weight: 500;
+                        padding: 0 10px;
+                        font-size: 14px;
+                    }
+
+                    .ant-btn {
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        border: none;
+                        background-color: #f5f5f5;
+                        &:hover {
+                            color: var(--primary);
+                        }
+                    }
+                }
+            }
+
+                @include responsive(md) {
+        // Use full width for some elements and let them wrap
+        .addon-item-details {
+            // Allow details to shrink to make space for quantity controls
+            flex-basis: calc(100% - 70px); // Full width minus image and gap
+            flex-grow: 0;
+        }
+
+        .addon-item-quantity {
+            min-width: auto; // remove min-width
+            justify-content: flex-start; // align to left
+            margin-left: 62px; // Align with the details text (50px image + 12px gap)
+            margin-top: 8px;
+        }
+
+        .addon-item-total {
+            margin-left: auto; // Push total price to the right
+            text-align: right;
+            padding-right: 30px; // Space for the remove button
+        }
+
+        .addon-item-remove {
+            // Position the remove button absolutely for better control
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+
+             .ant-btn {
+                padding: 0;
+            }
+        }
+    }
+
+            .addon-item-total {
+                font-size: 15px;
+                font-weight: 600;
+                color: #212529;
+                min-width: 80px;
+                text-align: right;
+            }
+            
+            .addon-item-remove {
+                .ant-btn svg { width: 14px; height: 14px; }
+            }
+        }
+      }
+    }
+  }
+}

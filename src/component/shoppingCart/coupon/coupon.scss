@@ -1,0 +1,92 @@
+@use "./../../../assets/scss/mixin.scss" as *;
+.coupon-modal {
+    width: 765px!important;
+    @include responsive(sm){
+        width: 95%!important;
+    }
+
+    .remove-btn{
+        color: red !important;
+    }
+    .ant-modal-content {
+        border-radius: 20px;
+        padding: 40px 35px;
+
+        @include responsive(sm) {
+            padding: 30px 12px;
+        }
+
+        .ant-modal-close {
+            background-color: transparent;
+
+            .ant-modal-close-x {
+                box-shadow: 0px 0px 4px 3px #00000012;
+                background: #fff;
+                color: #000;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+            }
+        }
+
+        .modal-content {
+            .title{
+                h3{
+                    font-weight: 600;
+                    font-size: 22px;
+                    color: var(--text);
+                }
+            }
+            table{
+                width: 100%;
+                border-spacing: 0px;
+                @include responsive(sm) {
+                    width: 700px;
+                }
+                tr{
+                    td{
+                        padding: 10px 15px;
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid #8B8B8B;
+                        p{             
+                            font-weight: 400;
+                            font-size: 18px;
+                            color: var(--text);
+                            margin-bottom: 0px;
+                            line-height: normal;
+                        }
+                        h4{
+                            font-family:'poppins', sans-serif!important;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 24px;
+                            text-transform: capitalize;
+                            color: var(--primary);
+                        }
+                        .use-code{
+                            border: 1px dashed #E8214C;
+                            padding: 5px 8px;
+                            border-radius: 8px;
+                            h3{ 
+                                font-family:'poppins', sans-serif!important;
+                                font-weight: 500;
+                                text-align: center;
+                                font-size: 18px;
+                                line-height: normal;
+                                text-transform: capitalize;
+                                color: #191C1F;
+                            }
+                        }
+                        a{
+                            font-weight: 500;
+                            font-size: 22px;
+                            color: #03B53E;
+                            margin-bottom: 0px;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

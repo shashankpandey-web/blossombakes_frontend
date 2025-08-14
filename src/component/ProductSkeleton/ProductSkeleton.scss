@@ -1,0 +1,10 @@
+.ant-skeleton-image {
+  width: 100px;
+  height: 100px;
+}
+
+
+:where(.css-dev-only-do-not-override-1rfzxih).ant-skeleton.ant-skeleton-element {
+    display: inline-block;
+    width: 100%;
+}

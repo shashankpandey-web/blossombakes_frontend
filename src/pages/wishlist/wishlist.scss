@@ -1,0 +1,190 @@
+@use "./../../assets/scss/mixin.scss" as *;
+
+.wishlist-wrapper {
+
+
+  // Table skeleton specific styles
+  .table-main {
+    .ant-table {
+      background: transparent;
+      border-radius: 8px;
+
+      &-placeholder {
+        display: none;
+      }
+    }
+  }
+
+
+  .product-details {
+    display: flex;
+    align-items: center;
+
+    .ant-skeleton {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // Button group skeleton
+  .button-group {
+    .ant-skeleton-button {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  .price-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .discount-price {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .regular-price {
+      color: #333;
+      font-size: 16px;
+
+      &.struck {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 14px;
+      }
+    }
+  }
+
+
+
+
+  .discount-badge {
+    background: var(--primary);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 8px;
+  }
+
+
+
+
+  // Skeleton loading styles
+  .ant-skeleton {
+    &-image {
+      margin-right: 15px;
+    }
+
+    &-content {
+      .ant-skeleton-title {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+
+  table {
+    border-radius: 10px;
+    border: 1px solid #E6E6E6;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    @include responsive(sm) {
+      width: 1000px;
+    }
+
+    thead {
+      tr {
+        th {
+          padding: 20px 20px;
+          font-family: 'poppins', sans-serif !important;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: normal;
+          text-transform: uppercase;
+          color: #656565;
+          text-align: left;
+          letter-spacing: 0.8px;
+          border-bottom: 1px solid #E6E6E6;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        vertical-align: middle;
+
+        &:last-child {
+          td {
+            border: 0px;
+          }
+        }
+
+        td {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          color: #2C2C2C;
+          border-bottom: 1px solid #E6E6E6;
+          padding: 20px 20px;
+
+          .product-details {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+
+            img {
+              width: 120px;
+              height: auto;
+              object-fit: cover;
+              border-radius: 8px;
+            }
+
+            h3 {
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 100%;
+              color: #2C2C2C;
+            }
+          }
+
+          .button-group {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+
+            .add-cart-btn {
+              background-color: var(--primary);
+              font-family: 'poppins', sans-serif !important;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 24px;
+              text-align: center;
+              color: #fff;
+              padding: 14px 32px;
+              border-radius: 50px;
+              border: 0px;
+              cursor: pointer;
+            }
+          }
+
+          .cancel-btn {
+            background-color: transparent;
+            border: 0px;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

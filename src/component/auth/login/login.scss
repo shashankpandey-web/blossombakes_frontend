@@ -1,0 +1,120 @@
+@use "./../../../assets/scss/mixin.scss" as *;
+.login-modal {
+    .ant-modal-content {
+        padding: 0px;
+        border-radius: 20px;
+        .ant-modal-close{
+            background-color: transparent;
+            .ant-modal-close-x {
+                box-shadow: 0px 0px 4px 3px #00000012;
+                background: #fff;
+                color: #000;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+            }
+        }
+        .login-body {
+            .login-banner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background-image: url(/src/assets/image/login-banner-bg.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 1rem 10px;
+                height: 191px;
+                gap: 10px;
+                border-radius: 20px;
+
+                img {
+                    width: 88px;
+                    height: auto;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 0px;
+                    vertical-align: middle;
+                    color: #353535;
+                }
+            }
+            .content-wrap{
+                padding: 30px 45px;
+                @include responsive(sm){
+                    padding: 20px 10px;
+                }
+                h3{
+                    font-weight: 500;
+                    font-size: 22px;
+                    line-height: 100%;
+                    color: var(--primary);
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                input{
+                    padding: 10px 10px;
+                    margin-bottom: 2px;
+                    &:hover{
+                        border-color: var(--primary);
+                    }
+                    &:focus-within{
+                        border-color: var(--primary);
+                        box-shadow: unset;
+                    }
+                    &::placeholder{
+                        color: #8B8B8B;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+                .login-btn{
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 22px;
+                    letter-spacing: 1.2%;
+                    color: #fff;
+                    padding: 26px 20px;
+                    border-radius: 50px;
+                    background-color: var(--primary);
+                    border: 0px;
+                    width: 100%;
+                    margin-bottom: 40px;
+                }
+                p{
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 28px;
+                    color: #8B8B8B;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 15px;
+                    span{
+                        background: #AAAAAA;
+                        width: 120px;
+                        display: block;
+                        height: 1px;
+                        @include responsive(sm){
+                            width: 68px;
+                        }
+                    }
+                }
+                .login-options{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    margin-top: 2rem;
+                    img{
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

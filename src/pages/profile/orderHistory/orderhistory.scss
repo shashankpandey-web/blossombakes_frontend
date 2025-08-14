@@ -1,0 +1,105 @@
+@use "./../../../assets/scss/mixin.scss" as *;
+.order-history-wrapper {
+    border: 1px solid #D8D8D8;
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+    .top-heading {
+        padding: 10px 30px;
+        background-color: #151517;
+        border-radius: 8px 8px 0px 0px;
+
+        h3 {
+            font-weight: 400;
+            font-size: 18px;
+            color: #FFFFFF;
+            line-height: normal;
+        }
+    }
+
+    .content-container {
+        height: 80vh;
+        overflow: auto;
+
+        .no-orders div{
+            min-height: 550px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Poppins', sans-serif;
+            @include responsive(sm){
+                width: 700px;
+            }
+            th,
+            td {
+                padding: 15px 16px;
+                text-align: left;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            tr{
+                &:last-child{
+                    td{
+                        border-bottom: 0px;
+                    }
+                }
+            }
+
+            th {
+                background-color: #f9f9f9;
+                font-weight: 400;
+                font-size: 14px;
+                color: #656565;
+                white-space: nowrap;
+            }
+
+            td {
+                font-size: 14px;
+                font-weight: 400;
+                color: #333333;
+                vertical-align: middle;
+                strong{
+                    font-weight: 500;
+                }
+            }
+
+            .status-delivered {
+                color: #008000;
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+             .status-pending {
+                color: #FFA500;
+                font-weight: 400;
+                font-size: 14px;
+            }
+           
+
+            .status-onway {
+                color: var(--primary);
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            .view-detail {
+                color: #1677ff;
+                font-weight: 400;
+                font-size: 14px;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.account_order_history_list{
+    min-height: 580px;
+}

@@ -1,0 +1,305 @@
+@use "./../../assets/scss/mixin.scss" as *;
+
+.contact_us_page {
+
+      .ant-skeleton{
+        margin-bottom: 20px;
+    }
+
+    .headings {
+        text-align: center;
+        margin-bottom: 40px;
+
+        h2 {
+            color: #1A1A1A;
+            font-family: 'poppins', sans-serif !important;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-bottom: 15px;
+
+            @include responsive(sm) {
+                font-size: 28px;
+            }
+            span{
+                line-height: 25px;
+                display: block;
+                font-family: 'poppins', sans-serif !important;
+            }
+        }
+
+        hr{
+            margin: 20px 0px;
+            border-color: #fdfdfd;
+        }
+        h3 {
+            color: #1A1A1A;
+            font-family: 'poppins', sans-serif !important;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 91%;
+            margin-bottom: 6px;
+            text-align: left;
+
+            @include responsive(sm) {
+                font-size: 28px;
+            }
+            span{
+                display: block;
+                line-height: 25px;
+                font-family: 'poppins', sans-serif !important;
+                strong{
+                    font-family: 'poppins', sans-serif !important;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        p {
+            color: #808080;
+            text-align: center;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 154%;
+            text-align: left;
+
+            @include responsive(sm) {
+                font-size: 16px;
+                max-width: 100%;
+            }
+        }
+        ul{
+            padding: 0px;
+            margin: 0px;
+            li{
+                list-style-type: none!important;
+            }
+        }
+    }
+
+    .contact_info {
+        margin-bottom: 60px;
+        border-radius: 31px;
+        border: 1px solid #DEDEDE;
+        background: #FFF;
+
+        @include responsive(sm) {
+            border-radius: 14px;
+        }
+
+        .personal_info {
+            padding: 45px 40px;
+            border-radius: 31px 0px 0px 31px;
+            background: rgba(232, 33, 76, 0.08);
+            position: relative;
+            overflow: hidden;
+
+            @include responsive(xl) {
+                padding: 15px;
+            }
+
+            @include responsive(md) {
+                padding: 30px 20px;
+            }
+
+            @include responsive(sm) {
+                padding: 20px 10px;
+                border-radius: 14px;
+            }
+
+            h2 {
+                color: var(--primary);
+                font-size: 32px;
+                font-weight: 500;
+                line-height: 140%;
+                margin-bottom: 40px;
+
+                @include responsive(sm) {
+                    text-align: center;
+                }
+            }
+
+            .all_info {
+                .p_info {
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+                    margin-bottom: 26px;
+                    padding: 8px 0;
+
+                    @include responsive(sm) {
+                        gap: 5px;
+                    }
+
+                    .icons {
+                        background-color: var(--primary);
+                        padding: 12px;
+                        border-radius: 50%;
+                        width: 55px;
+                        height: 55px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        svg {
+                            width: 28px;
+                            height: auto;
+                        }
+
+                        @include responsive(sm) {
+                            width: 40px;
+                            height: 40px;
+                            padding: 10px;
+                        }
+                    }
+
+                    .emails {
+                        span {
+                            color: #212121;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 120%;
+                        }
+
+                        h4 {
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-bottom: 0;
+                            color: var(--text);
+                            margin-top: 4px;
+
+                            @include responsive(sm) {
+                                font-size: 15px;
+                            }
+                        }
+
+                        .loaction {
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-bottom: 0;
+                            color: var(--text);
+                        }
+                    }
+                }
+            }
+
+            .bottom-social-media {
+                .heading {
+                    margin-bottom: 10px;
+                    margin-top: 3rem;
+
+                    h2 {
+                        color: var(--primary);
+                        font-size: 22px;
+                        font-weight: 500;
+                        line-height: 140%;
+                        margin-bottom: 22px;
+                    }
+                }
+
+                ul {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    padding: 0px;
+
+                    @include responsive(sm) {
+                        justify-content: center;
+                    }
+
+                    li {
+                        border: 1px solid var(--text);
+                        padding: 12px;
+                        border-radius: 50%;
+                        width: 42px;
+                        height: 42px;
+                        display: grid;
+                        place-content: center;
+
+                        a {
+                            height: 16px;
+                            line-height: normal;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-form {
+            padding: 40px 26px;
+
+            @include responsive(md) {
+                padding: 40px 15px;
+            }
+
+            @include responsive(sm) {
+                padding: 2rem 10px;
+            }
+
+            .ant-form-item {
+                margin-bottom: 0px;
+
+                .ant-col.ant-form-item-control  {
+                    margin-bottom: 30px;
+
+                }
+            }
+
+            .ant-input {
+                padding: 13px;
+                margin-bottom: 4px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+                color: var(--text);
+                border-radius: 5px;
+                border: 1px solid #CECECE;
+                background: #FFF;
+
+                &:hover{
+                    border-color: var(--primary);
+                }
+                &:focus-within{
+                    border-color: var(--primary);
+                    box-shadow: unset;
+                }
+                &::placeholder{
+                    color: #8B8B8B;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+
+            .Send-btn {
+                background: var(--primary);
+                padding: 12px 60px;
+                font-weight: 600;
+                font-size: 16px;
+                color: #fff;
+                border: 0px;
+                transition: 0.7s;
+                border-radius: 50px;
+                height: auto;
+                transition: all 0.3s ease;
+                margin-left: auto;
+                display: block;
+                margin-top: 2rem;
+                box-shadow: unset;
+
+                @include responsive(sm) {
+                    margin: auto;
+                    display: block;
+                }
+
+                &:hover {
+                    background: var(--secondary);
+                    color: #000;
+                }
+            }
+        }
+    }
+}

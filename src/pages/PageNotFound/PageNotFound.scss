@@ -1,0 +1,139 @@
+$primary-color: #E8214C;
+$secondary-color: #ff8fa3;
+$background-color: #fff5f7;
+$text-color: #333;
+
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #fff5f7;
+    padding: 2rem;
+    position: relative;
+    margin-top: -36px;
+}
+
+
+.not-found-content {
+  text-align: center;
+  max-width: 600px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.cake-animation {
+  position: relative;
+  margin: 0 auto 2rem;
+  width: 200px;
+  height: 200px;
+  
+  .cake-image {
+    width: 100%;
+    height: auto;
+    animation: bounce 2s infinite alternate;
+  }
+  
+  .crumbs {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+  }
+  
+  .crumb {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    bottom: 0;
+    left: calc(50% + (var(--i) * 15px) - 30px);
+    animation: fall 3s infinite ease-in;
+    animation-delay: calc(var(--i) * 0.2s);
+    opacity: 0;
+  }
+}
+
+.error-code {
+  font-size: 5rem;
+  color: $primary-color;
+  margin: 0;
+  line-height: 1;
+  animation: pulse 2s infinite;
+}
+
+.error-message {
+  font-size: 1.8rem;
+  color: $text-color;
+  margin: 1rem 0;
+}
+
+.error-description {
+  color: lighten($text-color, 20%);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  
+  button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .back-button {
+    background-color: white;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    
+    &:hover {
+      background-color: lighten($primary-color, 45%);
+    }
+  }
+  
+  .home-button {
+    background-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(150px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

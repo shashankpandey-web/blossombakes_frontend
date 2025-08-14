@@ -1,0 +1,72 @@
+@use "./../../assets/scss/mixin.scss" as *;
+.blog-details-wrapper {
+    .content-wrap {
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+
+        .ant-skeleton-image.blog-image-skeleton {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 40px;
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+
+            p {
+                font-weight: 600;
+                font-size: 16px;
+                text-transform: capitalize;
+                color: var(--text);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                svg {
+                    width: 18px;
+                    height: auto;
+                }
+            }
+        }
+
+        .blog-content {
+            margin-bottom: 30px;
+            h3 {
+                font-weight: 500;
+                font-size: 32px;
+                color: #1A1A1A;
+                margin-bottom: 10px;
+                @include responsive(sm){
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            h4 {
+                font-weight: 500;
+                font-size: 20px;
+                color: #1A1A1A;
+                margin-bottom: 20px;
+                @include responsive(sm){
+                    font-size: 16px;
+                }
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                color: #808080;
+                margin-bottom: 20px;
+                line-height: 1.7;
+            }
+        }
+    }
+}

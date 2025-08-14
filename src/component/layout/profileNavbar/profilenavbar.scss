@@ -1,0 +1,111 @@
+@use "./../../../assets/scss/mixin.scss" as *;
+.profile-navbar {
+    position: sticky;
+    top: 11rem;
+    z-index: 99;
+    border: 1px solid #D8D8D8;
+    border-radius: 8px;
+    @include responsive(md){
+        visibility: hidden;
+        left: -280px;
+        transition: all 0.5s ease;
+        position: fixed;
+        top: 0px;
+        height: 100vh;
+    }
+    &.active{
+        position: fixed;
+        left: 0px;
+        background: #fff;
+        width: 280px;
+        top: 0px;
+        height: 100vh;
+        border-radius: 0px 10px 10px 0px;
+       visibility: visible;
+    }
+    h3{
+        font-family: 'poppins', sans-serif!important;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: normal;
+        color: #1A1A1A;
+        padding: 15px 20px;
+        border-bottom: 1px solid #D8D8D8;
+    }
+    .ant-menu{
+        border-radius: 8px;
+        .ant-menu-item{
+            margin: 0px;
+            width: 100%;
+            border-radius: 0px;
+            height: 65px;
+            border-bottom: 1px solid #D8D8D8;
+            border-left: 4px solid transparent;
+            &:hover{
+                background-color: rgba(232, 33, 76, 0.06)!important;
+                .ant-menu-title-content{
+                    a{
+                        color: #000;
+                        svg{
+                            path{
+                                fill: var(--primary);
+                            }
+                        }
+                    }
+                    .logout-btn{
+                        color: #000;
+                        svg{
+                            path{
+                                fill: var(--primary);
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                border-bottom: 0px;
+                border-radius: 0px 0px 0px 0px;
+            }
+            &.ant-menu-item-selected{
+                background-color: rgba(232, 33, 76, 0.06)!important;
+                border-left: 4px solid var(--primary);
+                .ant-menu-title-content{
+                    a{
+                        color: #000;
+                        svg{
+                            path{
+                                fill: var(--primary);
+                            }
+                        }
+                    }
+                    .logout-btn{
+                        color: #000;
+                        svg{
+                            path{
+                                fill: var(--primary);
+                            }
+                        }
+                    }
+                }
+            }
+            .ant-menu-title-content{
+                a{
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #656565;
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                }
+                .logout-btn{
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #656565;
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                }
+            }
+        }
+    }
+}
